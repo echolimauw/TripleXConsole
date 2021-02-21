@@ -1,0 +1,3 @@
+﻿  TripleXGame.cpp
+C:\Users\Evan\source\repos\TripleXGame\TripleXGame\TripleXGame.cpp(65,14): warning C4101: 'bLevelComplete': unreferenced local variable
+  TripleXGame.vcxproj -> C:\Users\Evan\source\repos\TripleXGame\Debug\TripleXGame.exe
