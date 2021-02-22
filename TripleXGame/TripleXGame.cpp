@@ -1,29 +1,24 @@
 // TripleXGame.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
-int Difficulty = 2;
-int MaxDifficulty = 10;
 
-bool PlayGameAtDifficulty(int difficulty)
+bool PlayGameAtDifficulty(int Difficulty)
 {
-    int Difficulty = 2;
-    int MaxDifficulty = 10;
-
-    int CodeA = 4;
-    int CodeB = 3;
-    int CodeC = 2;
+    int CodeA = rand() % Difficulty + Difficulty;
+    int CodeB = rand() % Difficulty + Difficulty;
+    int CodeC = rand() % Difficulty + Difficulty;
     int GuessA = 0;
     int GuessB = 0;
     int GuessC = 0;
 
-    const int CodeSum = CodeA + CodeB + CodeC;
-    const int CodeProduct = CodeA * CodeB * CodeC;
-    const int GuessSum = GuessA + GuessB + GuessC;
-    const int GuessProduct = GuessA * GuessB * GuessC;
+    int const CodeSum = CodeA + CodeB + CodeC;
+    int const CodeProduct = CodeA * CodeB * CodeC;
+    int GuessSum = GuessA + GuessB + GuessC;
+    int GuessProduct = GuessA * GuessB * GuessC;
 
     cout << "+ There are three numbers in the code.\n";
     cout << "+ The code integers add up to: " << CodeSum << ".\n";
@@ -36,22 +31,23 @@ bool PlayGameAtDifficulty(int difficulty)
 
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
-        cout << "Code confirmed. Access granted.\n";
+        cout << "Code confirmed. Access granted...\n";
+        cout << "Data exported successfully. Continuing to scan for available servers.\n\n\n";
         return true;
     }
 
     else
     {
         cout << "Security breach protocol initiated. Security arrival: Immediate.\n";
-        cout << "You have been found, imprisoned, tortured and fed to stray dogs.\n";
+        cout << "You have been found, imprisoned, tortured and fed to stray dogs.\n\n\n";
         return false;
     }
 }
 
-void PrintIntroduction()
+void PrintIntroduction(int Difficulty)
 {
-    cout << "You are a secret agent breaking into a secure server room...\n";
-    cout << "Enter the correct code to continue...\n\n";
+    cout << "You are a secret agent breaking into a level " << Difficulty << "\n";
+    cout << "secure server room...  Enter the correct code to continue...\n\n";
 }
 
 int main()
@@ -59,11 +55,11 @@ int main()
     int Difficulty = 2;
     int MaxDifficulty = 10;
         
-    PrintIntroduction();
+    PrintIntroduction(Difficulty);
+
     while (Difficulty <= MaxDifficulty)
     {
-        bool bLevelComplete;
-        PlayGameAtDifficulty(Difficulty);
+        bool bLevelComplete = PlayGameAtDifficulty(Difficulty);
         cin.clear();
         cin.ignore();
 
@@ -74,6 +70,10 @@ int main()
         
     }
 
+    cout << "You have successfully accessed all server permissions.\n";
+    cout << "Server data exporting to remote repository.\n";
+    cout << "Your work here is done. Prepare for exfil.\n\n";
+    return 0;
 }
 
 
