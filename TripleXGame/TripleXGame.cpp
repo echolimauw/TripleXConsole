@@ -17,8 +17,8 @@ bool PlayGameAtDifficulty(int Difficulty)
 
     int const CodeSum = CodeA + CodeB + CodeC;
     int const CodeProduct = CodeA * CodeB * CodeC;
-    int GuessSum = GuessA + GuessB + GuessC;
-    int GuessProduct = GuessA * GuessB * GuessC;
+    int const GuessSum = GuessA + GuessB + GuessC;
+    int const GuessProduct = GuessA * GuessB * GuessC;
 
     cout << "+ There are three numbers in the code.\n";
     cout << "+ The code integers add up to: " << CodeSum << ".\n";
