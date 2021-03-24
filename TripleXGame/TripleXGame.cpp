@@ -3,7 +3,8 @@
 #include <iostream>
 #include <ctime>
 
-using namespace std;
+using std::cout;
+using std::cin;
 
 
 bool PlayGameAtDifficulty(int Difficulty)
@@ -17,9 +18,7 @@ bool PlayGameAtDifficulty(int Difficulty)
 
     int const CodeSum = CodeA + CodeB + CodeC;
     int const CodeProduct = CodeA * CodeB * CodeC;
-    int const GuessSum = GuessA + GuessB + GuessC;
-    int const GuessProduct = GuessA * GuessB * GuessC;
-
+    
     cout << "+ There are three numbers in the code.\n";
     cout << "+ The code integers add up to: " << CodeSum << ".\n";
     cout << "+ The code integers multiply to equal: " << CodeProduct << ".\n";
@@ -27,6 +26,10 @@ bool PlayGameAtDifficulty(int Difficulty)
     cin >> GuessA;
     cin >> GuessB;
     cin >> GuessC;
+
+    int const GuessSum = GuessA + GuessB + GuessC;
+    int const GuessProduct = GuessA * GuessB * GuessC;
+
     cout << "You entered: " << GuessA << " " << GuessB << " " << GuessC << ".\n";
 
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
